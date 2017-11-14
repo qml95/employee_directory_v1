@@ -9,7 +9,7 @@ ajaxGet("https://randomuser.me/api/?results=12", function(reponse) {
     var profilElt = document.createElement('div');
     profilElt.setAttribute("id", "profil")
     profilElt.innerHTML =`
-      <div onclick=caca(this)>
+      <div onclick=over(this)>
         <img data-img="{mesProfils[i].picture.medium}" src="${mesProfils[i].picture.medium}" id="img">
         <div id="description">
           <p id="info">
@@ -32,7 +32,7 @@ employeElt.appendChild(profilElt);
 
 //partie de lightbox
 var body = document.querySelector('body');
-function caca(employeHtml) {
+function over(employeHtml) {
   var essais = employeHtml;
   essais.setAttribute('class', 'overlaytitle');
 
@@ -47,7 +47,7 @@ lightboxElt.appendChild(essais);
   lightboxElt.addEventListener('click', function(){
 
       lightboxElt.remove();
-  
+
   });
 
 
