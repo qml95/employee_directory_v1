@@ -11,3 +11,27 @@ body{
 #employe{
 
 }
+img{
+  padding: 10px;
+  border-radius: 50%;
+  float: left;
+}
+p #description{
+  float: left;
+}
+p{
+  font-size: 13px;
+  margin: 5px;
+}
+#info{
+  font-size: 17px;
+}
+.infosecondaire{
+  color: grey;
+}
+div #profil{
+  width: 300px;
+  height: 100px;
+  border: 1px solid red;
+  border-radius: 10%;
+}
