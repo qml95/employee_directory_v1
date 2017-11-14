@@ -1,8 +1,6 @@
 //declaration des variable globale
 var employeElt = document.getElementById('employe');
 
-
-
 //utilistion de la fonction ajaxGet pour afficher les douze profils
 ajaxGet("https://randomuser.me/api/?results=12", function(reponse) {
   var profil = JSON.parse(reponse);
@@ -11,7 +9,7 @@ ajaxGet("https://randomuser.me/api/?results=12", function(reponse) {
     var profilElt = document.createElement('div');
     profilElt.setAttribute("id", "profil")
     profilElt.innerHTML =`
-        <img src="${mesProfils[i].picture.medium}">
+        <img data-img="{mesProfils[i].picture.medium}" src="${mesProfils[i].picture.medium}">
         <p id="description">
         <p id="info">
           ${mesProfils[i].name.title}
@@ -29,3 +27,5 @@ ajaxGet("https://randomuser.me/api/?results=12", function(reponse) {
 employeElt.appendChild(profilElt);
   }
 });
+
+//partie de lightbox
