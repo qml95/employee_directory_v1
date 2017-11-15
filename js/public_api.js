@@ -23,49 +23,34 @@ ajaxGet("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
           <p class="infosecondaire">
             ${mesProfils[i].location.city}
           </p>
+          <div>
+            <p>
+            ${mesProfils[i].phone}
+            </p>
+            <p>
+            ${mesProfils[i].location.street}
+            ${mesProfils[i].location.postcode}
+            ${mesProfils[i].location.state}
+            </p>
           </div>
-        <div>
-      </div>
+          </div>
       `;
-    var infosCacheElt = document.createElement('div');
-    infosCacheElt.setAttribute('class', 'infoscache');
-    infosCacheElt.innerHTML = `
-      <div>
-        <p>
-          ${mesProfils{i}.phone}
-        </p>
-        <p>
-          ${mesProfils.location.street}
-          ${mesProfils.location.state}
-          ${mesProfils.location.postcode}
-        </p>
-      </div>
-    `;
+
 employeElt.appendChild(profilElt);
   }
-});
-
+}); // fin fonction ajaxGet
 //partie de lightbox
 var body = document.querySelector('body');
+//debut fonction over
 function over(employeHtml) {
   var infos = document.createElement('div');
-  var infos = employeHtml.cloneNode();
+  var infos = employeHtml.cloneNode(employeHtml);
   infos.setAttribute('class', 'overlaytitle');
 
   //création d'éléments
   var lightboxElt = document.createElement('div');
   lightboxElt.setAttribute('id', 'overlay');
 
-  // var infosComplementaire = document.createElement('div');
-
-  // infosComplementaire.innerHTML = `
-  //
-  //                   <p>
-  //                     test
-  //                   </p>
-  // `
-
-  //ajout de la lightbox au body
 
   lightboxElt.addEventListener('click', function(){
 
@@ -76,6 +61,6 @@ function over(employeHtml) {
   //ajout des elements
 body.appendChild(lightboxElt);
 lightboxElt.appendChild(infos);
-// infos.appendChild(infosComplementaire);
 
-}
+
+} // fin fonction over
