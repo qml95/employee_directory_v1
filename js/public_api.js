@@ -4,7 +4,6 @@ var employeElt = document.getElementById('employe');
 //utilistion de la fonction ajaxGet pour afficher les douze profils
 ajaxGet("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
   var profil = JSON.parse(reponse);
-  console.log(profil);
   var mesProfils = profil.results;
   for (var i = 0; i < mesProfils.length; i++) {
     var profilElt = document.createElement('div');
@@ -28,6 +27,20 @@ ajaxGet("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
         <div>
       </div>
       `;
+    var infosCacheElt = document.createElement('div');
+    infosCacheElt.setAttribute('class', 'infoscache');
+    infosCacheElt.innerHTML = `
+      <div>
+        <p>
+          ${mesProfils{i}.phone}
+        </p>
+        <p>
+          ${mesProfils.location.street}
+          ${mesProfils.location.state}
+          ${mesProfils.location.postcode}
+        </p>
+      </div>
+    `;
 employeElt.appendChild(profilElt);
   }
 });
@@ -36,7 +49,7 @@ employeElt.appendChild(profilElt);
 var body = document.querySelector('body');
 function over(employeHtml) {
   var infos = document.createElement('div');
-  var infos = employeHtml.cloneNode(true);
+  var infos = employeHtml.cloneNode();
   infos.setAttribute('class', 'overlaytitle');
 
   //création d'éléments
