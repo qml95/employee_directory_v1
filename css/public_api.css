@@ -11,8 +11,11 @@ body{
 #h3{
 padding: 15px;
 margin-bottom: 0;
+text-align: center;
 }
 #employe{
+  margin-left: 140px;
+  margin-right: auto;
 }
 /*/////////////////////////////////////////////////////////////////////
                       fin de la partie css globale
