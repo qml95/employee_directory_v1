@@ -2,7 +2,8 @@
 var employeElt = document.getElementById('employe');
 
 //utilistion de la fonction ajaxGet pour afficher les douze profils
-ajaxGet("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
+//debut de la fonction recuperationApi
+recuperationApi("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
   var profil = JSON.parse(reponse);
   var mesProfils = profil.results;
   for (var i = 0; i < mesProfils.length; i++) {
@@ -23,35 +24,50 @@ ajaxGet("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
           <p class="infosecondaire">
             ${mesProfils[i].location.city}
           </p>
-          <div>
-            <p>
-            ${mesProfils[i].phone}
-            </p>
-            <p>
-            ${mesProfils[i].location.street}
-            ${mesProfils[i].location.postcode}
-            ${mesProfils[i].location.state}
-            </p>
           </div>
+          <div class="infoscache">
+          <hr>
+            <p>Tel :
+              ${mesProfils[i].phone}
+            </p>
+            <p>
+              ${mesProfils[i].location.street} ${mesProfils[i].location.postcode} ${mesProfils[i].location.state}
+            </p>
+            <p>Anniversaire :
+              ${mesProfils[i].dob}
+            </p>
+
           </div>
       `;
 
+
+
 employeElt.appendChild(profilElt);
+
   }
-}); // fin fonction ajaxGet
-//partie de lightbox
+
+}); // fin fonction recuperationApi
+
+/*//////////////////////////////////////////////////////////////////////
+                      partie pour la light box
+//////////////////////////////////////////////////////////////////////*/
+
+//recuperation du body du dom
 var body = document.querySelector('body');
+
+
 //debut fonction over
 function over(employeHtml) {
-  var infos = document.createElement('div');
+
   var infos = employeHtml.cloneNode(employeHtml);
   infos.setAttribute('class', 'overlaytitle');
+  infos.style.display = '';
 
   //création d'éléments
   var lightboxElt = document.createElement('div');
   lightboxElt.setAttribute('id', 'overlay');
 
-
+  //addEventListener pour quitter la lightbox
   lightboxElt.addEventListener('click', function(){
 
       lightboxElt.remove();
@@ -61,6 +77,5 @@ function over(employeHtml) {
   //ajout des elements
 body.appendChild(lightboxElt);
 lightboxElt.appendChild(infos);
-
 
 } // fin fonction over

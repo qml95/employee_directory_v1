@@ -1,5 +1,5 @@
 //création de la fonction AJAX
-function ajaxGet(url, callback) {
+function recuperationApi(url, callback) {
     var req = new XMLHttpRequest();
     req.open("GET", url);
     req.addEventListener("load", function () {

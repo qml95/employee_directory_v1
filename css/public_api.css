@@ -1,4 +1,6 @@
-/* debut du style globale de la page*/
+/*/////////////////////////////////////////////////////////////////////
+                            css de la page globale
+/////////////////////////////////////////////////////////////////////*/
 body{
   margin: 0;
   padding: 20px;
@@ -12,9 +14,13 @@ margin-bottom: 0;
 }
 #employe{
 }
-/* fin du style globale de la page*/
+/*/////////////////////////////////////////////////////////////////////
+                      fin de la partie css globale
+/////////////////////////////////////////////////////////////////////*/
 
-/* debu du style des divs profil*/
+/*/////////////////////////////////////////////////////////////////////
+              debut de la partie css divs profils
+/////////////////////////////////////////////////////////////////////*/
 div .profil{
   width: 300px;
   height: 100px;
@@ -41,10 +47,16 @@ p{
 .infosecondaire{
   color: grey;
 }
+.profil .infoscache{
+  display: none;
+}
+/*/////////////////////////////////////////////////////////////////////
+              fin de la partie css divs profils
+/////////////////////////////////////////////////////////////////////*/
 
-/* fin du style des divs profil*/
-
-/* debut de la partie overlay image */
+/*/////////////////////////////////////////////////////////////////////
+              debut de la partie css lightbox
+/////////////////////////////////////////////////////////////////////*/
 #overlay{
   position: fixed;
   top: 0;
@@ -57,18 +69,34 @@ p{
 
 }
 .overlaytitle{
-    width: 40%;
-    height: 30%;
+    width: 35%;
+    height: 60%;
     background-color: white;
     text-align: center;
     color: black;
     display: block;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 35%;
     border-radius: 10px;
 }
-
-
-
-/* fin de la partie overlay image*/
+.overlaytitle .img{
+  clear: left;
+  margin-left: 245px;
+  margin-bottom: 25px;
+  width: 150px;
+}
+.overlaytitle .description{
+  clear: left;
+}
+hr{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 300px;
+}
+.overlaytitle .infoscache{
+  color: grey;
+}
+/*/////////////////////////////////////////////////////////////////////
+              fin de la partie css lightbox
+/////////////////////////////////////////////////////////////////////*/
