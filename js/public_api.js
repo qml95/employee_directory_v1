@@ -61,7 +61,7 @@ function over(employeHtml) {
 
   var infos = employeHtml.cloneNode(employeHtml);
   infos.setAttribute('class', 'overlaytitle');
-  infos.style.display = '';
+
 
   //création d'éléments
   var lightboxElt = document.createElement('div');
