@@ -32,7 +32,7 @@ div .profil{
   float: left;
   margin: 10px;
 }
-.img{
+.profil .img{
   padding: 10px;
   border-radius: 50%;
   float: left;
@@ -72,22 +72,21 @@ p{
 
 }
 .overlaytitle{
-    width: 35%;
+    width: 20%;
     height: 60%;
     background-color: white;
     text-align: center;
     color: black;
     display: block;
-    position: absolute;
-    top: 25%;
-    left: 35%;
+    margin: 5% auto auto;
     border-radius: 10px;
+    padding-top: 10px;
 }
 .overlaytitle .img{
-  clear: left;
-  margin-left: 245px;
-  margin-bottom: 25px;
   width: 150px;
+  display: block;
+  margin: 0 auto 25px;
+  border-radius: 50%;
 }
 .overlaytitle .description{
   clear: left;
