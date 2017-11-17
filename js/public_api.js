@@ -3,14 +3,14 @@ var employeElt = document.getElementById('employe');
 var body = document.querySelector('body');
 
 //début de la fonction recuperationApi
-recuperationApi("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
+recuperationTableauEmploye("https://randomuser.me/api/?results=12&nat=FR", function(reponse) {
   var profil = JSON.parse(reponse);
   var mesProfils = profil.results;
   for (var i = 0; i < mesProfils.length; i++) {
     var profilElt = document.createElement('div');
     profilElt.setAttribute("class", "profil")
     profilElt.innerHTML =`
-      <div onclick=overlay(this)>
+      <div onclick=showEmployeDetails(this)>
         <img src="${mesProfils[i].picture.medium}" class="img">
         <div class="description">
           <p class="info">
@@ -47,24 +47,20 @@ recuperationApi("https://randomuser.me/api/?results=12&nat=FR", function(reponse
                       partie pour la light box
 //////////////////////////////////////////////////////////////////////*/
 
-//debut fonction over
-function overlay(employeHtml) {
-
-  var infos = employeHtml.cloneNode(employeHtml);
-  infos.setAttribute('class', 'overlaytitle');
-
+//debut fonction showEmployeDetails
+function showEmployeDetails(employeHtml) {
+  var divInfos = employeHtml.cloneNode(employeHtml);
+  divInfos.setAttribute('class', 'overlaytitle');
   //création d'éléments
   var lightboxElt = document.createElement('div');
   lightboxElt.setAttribute('id', 'overlay');
 
   //addEventListener pour quitter la lightbox
   lightboxElt.addEventListener('click', function(){
-
-      lightboxElt.remove();
-
+    lightboxElt.remove();
   });
-  
+
   //ajout des elements
-body.appendChild(lightboxElt);
-lightboxElt.appendChild(infos);
-} // fin fonction over
+  body.appendChild(lightboxElt);
+  lightboxElt.appendChild(divInfos);
+} // fin fonction showEmployeDetails

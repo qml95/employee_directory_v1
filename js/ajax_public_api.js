@@ -1,5 +1,5 @@
 //création de la fonction AJAX pour l'appelle de l'api
-function recuperationApi(url, callback) {
+function recuperationTableauEmploye(url, callback) {
     var req = new XMLHttpRequest();
     req.open("GET", url);
     req.addEventListener("load", function () {
